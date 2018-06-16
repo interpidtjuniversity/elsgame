@@ -1,0 +1,29 @@
+﻿生成启动时间为 2018/6/16 15:21:40。
+     1>项目“F:\ccocos2dxprogrammer\els\proj.win32\els.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         E:\vs2013\VC\bin\CL.exe /c /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\ /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\external /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\cocos\audio\include /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\external\chipmunk\include\chipmunk /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\extensions /I..\Classes /I.. /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\cocos /I"F:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\cocos/editor-support" /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\external\glfw3\include\win32 /I"F:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\external\freetype2\include\win32\freetype2 /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\external\freetype2\include\win32\ /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\external /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\external\openssl\include\win32 /IF:\ccocos2dxprogrammer\els\cocos2d\cocos\2d\..\..\Box2D /IF:\ccocos2dxprogrammer\els\Classes\Box2D /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USE_MATH_DEFINES /D GL_GLEXT_PROTOTYPES /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D COCOS2D_DEBUG=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D _USING_V110_SDK71_ /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc120.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\Demo.cpp
+         Demo.cpp
+       Link:
+         E:\vs2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\els.exe" /INCREMENTAL /NOLOGO /LIBPATH:"E:\python\cocos2d-x-3.16\cocos2d-x-3.16\cocos\2d\Debug.win32" /LIBPATH:F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\ /LIBPATH:F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\ libcurl.lib opengl32.lib glew32.lib libzlib.lib libwebp.lib libiconv.lib freetype.lib winmm.lib ws2_32.lib libbox2d.lib libSpine.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\els.pdb" /SUBSYSTEM:WINDOWS,"5.01" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\els.lib" /MACHINE:X86 /SAFESEH Debug.win32\game.res
+         Debug.win32\AppDelegate.obj
+         Debug.win32\Demo.obj
+         Debug.win32\fuck.obj
+         Debug.win32\HelloWorldScene.obj
+         Debug.win32\rand.obj
+         Debug.win32\xuanzhuan.obj
+         Debug.win32\main.obj
+         F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\libcocos2d.lib
+         F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\libSpine.lib
+         F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\libbox2d.lib
+         els.vcxproj -> F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\els.exe
+       CustomBuildStep:
+         if not exist "F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\" mkdir "F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\"
+         xcopy "F:\ccocos2dxprogrammer\els\proj.win32\..\Resources" "F:\ccocos2dxprogrammer\els\proj.win32\Debug.win32\" /D /E /I /F /Y
+               
+         :VCEnd
+         复制了 0 个文件
+     1>已完成生成项目“F:\ccocos2dxprogrammer\els\proj.win32\els.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:55.49
