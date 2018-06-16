@@ -227,27 +227,22 @@ Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority
 		auto edgeSp = Sprite::create();
 		auto edgeSp1 = Sprite::create();
 		auto body1 = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT);
-		auto body5 = PhysicsBody::createEdgeBox(Size(1200, 860));
+		auto body5 = PhysicsBody::createEdgeBox(Size(1202, 860));
 		body1->getShape(0)->setRestitution(0);
 		body5->getShape(0)->setRestitution(0);
 		Vect force = Vect(0.0f, 0.0f);
 		body1->applyImpulse(force);
 		body5->applyImpulse(force);
 		edgeSp->setPosition(Point(visibleSize.width / 2, visibleSize.height / 2));
-		edgeSp1->setPosition(Point(600, 430));
+		edgeSp1->setPosition(Point(601, 430));
 		edgeSp->setPhysicsBody(body1);
 		edgeSp1->setPhysicsBody(body5);
 		this->addChild(edgeSp); edgeSp->setTag(0);
 		this->addChild(edgeSp1); edgeSp->setTag(1);
 		//
-		for (int i = 0; i < 60; i++)
-		{
-			for (int j = 0; j < 43; j++)
-			{
-				backgroundnumber[i][j] = 0;
 
-			}
-		}
+		//
+
 		//
 		auto listener1 = EventListenerKeyboard::create();
 		listener1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event){
@@ -265,7 +260,8 @@ Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority
 		};
 		_eventDispatcher->addEventListenerWithSceneGraphPriority(listener1, this);
 		//
-		sprites[i]=addNewSpriteAtPosition(Point(600, 600));
+		evaluation();
+		sprites[i] = addBlock(1, Point(600, 800));
 		this->schedule(schedule_selector(MainScene1::updates));
 		this->scheduleUpdate();
 		return true;
@@ -744,37 +740,64 @@ Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority
 	}
 	void MainScene1::addbaseblock(int rotations, int X, int Y, int number)
 	{
-		for (int i = 0; i < 60; i++)
-		{
-			for (int j = 0; j < 43; j++)
-			{
-				background[i][j] = Sprite::create("square.png");
-				PhysicsBody *itsbody = PhysicsBody::createBox(Size(background[i][j]->getContentSize().width, background[i][j]->getContentSize().height));
-				background[i][j]->setPhysicsBody(itsbody);
-				background[i][j]->getPhysicsBody()->setDynamic(false);
-			}
-		}
 		if (number == 1)
 		{
 			if (rotations == 0||rotations==360)
 			{
-				background[X / 20 - 2][43 - (Y - 10) / 20 - 1]->setPosition(X - 30, Y), backgroundnumber[X / 20 - 2][43 - (Y - 10) / 20 - 1] = 1;
+				//
+				background[X / 20 - 2][43 - (Y - 10) / 20 - 1] = Sprite::create("square.png");
+				PhysicsBody *q = PhysicsBody::createBox(Size(20, 20));
+				background[X / 20 - 2][43 - (Y - 10) / 20 - 1]->setPhysicsBody(q);
+				q->setDynamic(false);
+				background[X / 20 - 2][43 - (Y - 10) / 20 - 1]->setPosition(X - 30, Y);
+				backgroundnumber[X / 20 - 2][43 - (Y - 10) / 20 - 1] = 1;
 				this->addChild(background[X / 20 - 2][43 - (Y - 10) / 20 - 1]);
+				//
+				background[X / 20 - 1][43 - (Y - 10) / 20 - 1] = Sprite::create("square.png");
+				PhysicsBody *w = PhysicsBody::createBox(Size(20, 20));
+				background[X / 20 - 1][43 - (Y - 10) / 20 - 1]->setPhysicsBody(w);
+				w->setDynamic(false);
 				background[X / 20 - 1][43 - (Y - 10) / 20 - 1]->setPosition(X - 10, Y), backgroundnumber[X / 20 - 1][43 - (Y - 10) / 20 - 1] = 1;
 				this->addChild(background[X / 20 - 1][43 - (Y - 10) / 20 - 1]);
+				//
+				background[X / 20][43 - (Y - 10) / 20 - 1] = Sprite::create("square.png");
+				PhysicsBody *e = PhysicsBody::createBox(Size(20, 20));
+				background[X / 20][43 - (Y - 10) / 20 - 1]->setPhysicsBody(e);
+				e->setDynamic(false);
 				background[X / 20][43 - (Y - 10) / 20 - 1]->setPosition(X + 10, Y), backgroundnumber[X / 20][43 - (Y - 10) / 20 - 1] = 1;
 				this->addChild(background[X / 20][43 - (Y - 10) / 20 - 1]);
+				//
+				background[X / 20 + 1][43 - (Y - 10) / 20 - 1] = Sprite::create("square.png");
+				PhysicsBody *r = PhysicsBody::createBox(Size(20, 20));
+				background[X / 20 + 1][43 - (Y - 10) / 20 - 1]->setPhysicsBody(r);
+				r->setDynamic(false);
 				background[X / 20 + 1][43 - (Y - 10) / 20 - 1]->setPosition(X + 30, Y), backgroundnumber[X / 20 + 1][43 - (Y - 10) / 20 - 1] = 1;
 				this->addChild(background[X / 20 + 1][43 - (Y - 10) / 20 - 1]);
 			}
 				else if (rotations == 90)
 				{
+					background[(X - 10) / 20][43 - Y / 20 - 2]=Sprite::create("square.png");
+					PhysicsBody *q = PhysicsBody::createBox(Size(20, 20));
+					background[(X - 10) / 20][43 - Y / 20 - 2]->setPhysicsBody(q);
+					q->setDynamic(false);
 					background[(X - 10) / 20][43 - Y / 20 - 2]->setPosition(X, Y + 30), backgroundnumber[(X - 10) / 20][43 - Y / 20 - 2]=1;
 					this->addChild(background[(X - 10) / 20][43 - Y / 20 - 2]);
+					background[(X - 10) / 20][43 - Y / 20 - 1] = Sprite::create("square.png");
+					PhysicsBody *w = PhysicsBody::createBox(Size(20, 20));
+					background[(X - 10) / 20][43 - Y / 20 - 1]->setPhysicsBody(w);
+					w->setDynamic(false);
 					background[(X - 10) / 20][43 - Y / 20 - 1]->setPosition(X, Y + 10), backgroundnumber[(X - 10) / 20][43 - Y / 20 - 1]=1;
 					this->addChild(background[(X - 10) / 20][43 - Y / 20 - 1]);
+					background[(X - 10) / 20][43 - Y / 20] = Sprite::create("square.png");
+					PhysicsBody *e = PhysicsBody::createBox(Size(20, 20));
+					background[(X - 10) / 20][43 - Y / 20]->setPhysicsBody(e);
+					e->setDynamic(false);
 					background[(X - 10) / 20][43 - Y / 20]->setPosition(X, Y - 10), backgroundnumber[(X - 10) / 20][43 - Y / 20]=1;
 					this->addChild(background[(X - 10) / 20][43 - Y / 20]);
+					background[(X - 10) / 20][43 - Y / 20 + 1] = Sprite::create("square.png");
+					PhysicsBody *r = PhysicsBody::createBox(Size(20, 20));
+					background[(X - 10) / 20][43 - Y / 20 + 1]->setPhysicsBody(r);
+					r->setDynamic(false);
 					background[(X - 10) / 20][43 - Y / 20 + 1]->setPosition(X, Y - 30), backgroundnumber[(X - 10) / 20][43 - Y / 20 + 1]=1;
 					this->addChild(background[(X - 10) / 20][43 - Y / 20 + 1]);
 				}
@@ -1339,7 +1362,7 @@ Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority
 	}
 	void MainScene1::clear()
 	{
-			int sum = 0;
+	    int sum = 0;
 		for (int i = 0; i < 60;i++)
 			if (backgroundnumber[i][42] == 1)
 			{
@@ -1363,15 +1386,29 @@ Director::getInstance()->getEventDispatcher()->addEventListenerWithFixedPriority
 					backgroundnumber[i][j] = backgroundnumber[i][j - 1];
 					if (backgroundnumber[i][j - 1] == 1)
 					{
-		/*				background[i][j] = Sprite::create("square.png");
+						background[i][j] = Sprite::create("square.png");
 						PhysicsBody *itsbody1 = PhysicsBody::createBox(Size(background[i][j]->getContentSize().width, background[i][j]->getContentSize().height));
 						background[i][j]->setPhysicsBody(itsbody1);
-						background[i][j]->getPhysicsBody()->setDynamic(false);    */
+						background[i][j]->getPhysicsBody()->setDynamic(false);    
 						background[i][j]->setPosition((i+1)*20-10,(42-j)*20+10);
 						this->addChild(background[i][j]);
 					}
 				}
 			}
 			sum = 0;
+		}
+	}
+	void MainScene1::evaluation()
+	{
+		for (int i = 0; i < 60; i++)
+		{
+			for (int j = 0; j < 43; j++)
+			{
+				backgroundnumber[i][j] = 0;
+			//	background[i][j] = Sprite::create("square.png");
+			//	PhysicsBody *itsbody = PhysicsBody::createBox(Size(background[i][j]->getContentSize().width, background[i][j]->getContentSize().height));
+			//	background[i][j]->setPhysicsBody(itsbody);
+			//	background[i][j]->getPhysicsBody()->setDynamic(false);
+			}
 		}
 	}
