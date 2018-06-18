@@ -36,7 +36,6 @@ public:
 //
 	Sprite* sp;
 	Sprite* sss;
-    Sprite* addNewSpriteAtPosition(Vec2 p);
 	std::map<cocos2d::EventKeyboard::KeyCode, bool> keys;
     void updates(float dt);
     Sprite* sprites[1000];
@@ -44,12 +43,16 @@ public:
 	int j = 0;
 	int area=0;
 	int shapeAmount = 4;
+	int rads = 90;
 	int rands[1000];
 	int a = 0, b = 0, c = 0, d = 0, e = 0;
 	//
+	void evaluation();
 	Sprite* background[60][43];
 	int backgroundnumber[60][43];;//判断bool值
 	void clear();//清除一行
+	int score=0;
+	void display();
 //判断shijian
 };
 
