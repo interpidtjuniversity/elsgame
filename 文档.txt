@@ -1,0 +1,9 @@
+start是单人游戏，2start是双人合作游戏
+score是排行榜
+exit是退出
+绿色按钮是easy模式
+黄色按钮是normal模式
+红色按钮是hard模式
+els.exe是启动器
+
+操作时尽量不要移动奇数次方块
